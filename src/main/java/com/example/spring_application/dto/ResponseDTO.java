@@ -7,6 +7,15 @@ public class ResponseDTO {
     private int salesPrice;
     private String description;
     private String title;
+    private String stockLocation;
+
+    public String getStockLocation() {
+        return stockLocation;
+    }
+
+    public void setStockLocation(String stockLocation) {
+        this.stockLocation = stockLocation;
+    }
 
     public boolean isInStock() {
         return inStock;

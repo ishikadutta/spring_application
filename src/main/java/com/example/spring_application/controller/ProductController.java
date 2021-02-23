@@ -19,4 +19,9 @@ public class ProductController {
 public Products getProducts(@RequestBody RequestDTO request ){
         return productService.getProducts(request);
     }
+//    @PostMapping(path="/location")
+//    public Products getNames(@RequestBody RequestDTO request){
+//        return productService.getLocation(request);
+//
+//    }
 }
