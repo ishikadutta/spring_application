@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class ProductServiceImpl implements ProductService, SolrFieldNames {
+   // private static final
     @Autowired
     private SearchClient searchClient;
 
@@ -49,8 +50,8 @@ public class ProductServiceImpl implements ProductService, SolrFieldNames {
                 } else {
                     responseDTO1.setInStock(false);
                 }
-                double salePrice = (double) productResponseObjectList.get(i).get("salePrice");
-                responseDTO1.setSalesPrice((int) salePrice);
+//                double salePrice = (double) productResponseObjectList.get(i).get("salePrice");
+//                responseDTO1.setSalesPrice((int) salePrice);
 
                 productDTOs.add(responseDTO1);
             }
@@ -77,8 +78,8 @@ Runnable runnableTask2=()-> {
         } else {
             responseDTO1.setInStock(false);
         }
-        double salePrice = (double) productResponseObjectList2.get(i).get("salePrice");
-        responseDTO1.setSalesPrice((int) salePrice);
+//        double salePrice = (double) productResponseObjectList2.get(i).get("salePrice");
+//        responseDTO1.setSalesPrice((int) salePrice);
 
         productDTOs2.add(responseDTO1);
     }
@@ -89,7 +90,7 @@ Runnable runnableTask2=()-> {
         executor.execute(runnableTask1);
         executor.execute(runnableTask2);
         executor.shutdown();
-        executor.shutdown();
+//        executor.shutdown();
         try {
             if (!executor.awaitTermination(800, TimeUnit.MILLISECONDS)) {
                 executor.shutdownNow();
